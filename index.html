@@ -645,7 +645,59 @@ void main() {
     <img id="img3" class="vscode-image" src="vscode3.png" alt="Tampilan VS Code" style="display:none;" 
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode3.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div
+    <!-- SECTION 3:  -->
+<div class="section">
+    <h2>4.Overriding Pada Class Turunan</h2>
     
+    <p><strong>✦ Pengertian Overriding Pada Class Turunan</strong></p>
+    <ul>
+        <li>Method Overriding adalah fitur dalam Pemrograman Berorientasi Objek (OOP) yang memungkinkan sebuah kelas turunan (subclass) untuk menulis ulang atau mengganti implementasi metode yang sudah ada pada kelas induknya (superclass).
+Sederhananya, meskipun nama dan parameternya sama, isi instruksi di dalamnya diubah agar lebih spesifik sesuai kebutuhan kelas anak.</li>
+    </ul>
+    <div class="code-box">
+        <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
+// NIM   : 251410009
+// Kelas : SI2A
+
+final class MathUtils {
+  static int tambah(int a, int b) {
+    return a + b;
+  }
+
+  static int kali(int a, int b) {
+    return a * b;
+  }
+
+  static int kurang(int a, int b) {
+    return a - b;
+  }
+
+  static double bagi(int a, int b) {
+    return a / b;
+  }
+}
+
+void main() {
+  print("=" * 50);
+  print("CONTOH UTILITY CLASS DENGAN STATIC METHOD");
+  print("=" * 50);
+
+  print("Penjumlahan (5 + 3): ${MathUtils.tambah(5, 3)}");
+  print("Perkalian (5 × 3): ${MathUtils.kali(5, 3)}");
+  print("Pengurangan (10 - 4): ${MathUtils.kurang(10, 4)}");
+  print("Pembagian (15 ÷ 3): ${MathUtils.bagi(15, 3)}");
+}</code></pre>
+    </div>
+    
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img4')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img4" class="vscode-image" src="vscode4.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode4.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div
 </div>
 
 <!-- FOOTER -->
