@@ -840,6 +840,67 @@ void main() {
     <img id="img6" class="vscode-image" src="vscode6.png" alt="Tampilan VS Code" style="display:none;" 
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode6.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div
+     <!-- SECTION 7:  -->
+<div class="section">
+    <h2>7.Penggunaan Ultility Class dengan Static Method (BONUS 2)  </h2>
+    
+    <p><strong>✦ Pengertian Penggunaan Ultility Class dengan Static Method</strong></p>
+    <ul>
+        <li>Utility Class dengan Static Method adalah pola desain dalam pemrograman berorientasi objek di mana sebuah kelas (Class) digunakan sebagai wadah untuk mengelompokkan fungsi-fungsi pembantu (helper functions/methods) yang umum, sering digunakan, dan tidak bergantung pada data instance tertentu. 
+TYPO3
+TYPO3
+ +1
+Metode ini dideklarasikan dengan kata kunci static, artinya fungsi tersebut melekat pada kelas itu sendiri, bukan pada objek (instance) yang dibuat dari kelas tersebut. </li>
+    </ul>
+    <div class="code-box">
+        <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
+// NIM   : 251410009
+// Kelas : SI2A
+
+// Class Abstrak
+abstract class Burung {
+  void suara();
+}
+
+// Class Burung Biasa
+class BurungBiasa extends Burung {
+  @override
+  void suara() {
+    print("🐦 Burung bersuara... Cuit cuit cuit");
+  }
+}
+
+// Class Bebek
+class Bebek extends Burung {
+  @override
+  void suara() {
+    print("🦆 Bebek bersuara... Kwek kwek kwek");
+  }
+}
+
+void main() {
+  print("=" * 50);
+  print("CONTOH ABSTRAKSI (BURUNG & BEBEK)");
+  print("=" * 50);
+
+  Burung burungBiasa = BurungBiasa();
+  Burung bebek = Bebek();
+
+  burungBiasa.suara();
+  bebek.suara();
+}</code></pre>
+    </div>
+    
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img7')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img7" class="vscode-image" src="vscode7.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode7.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div
+    
 </div>
 
 <!-- FOOTER -->
