@@ -484,11 +484,6 @@ window.onclick = function(e) {
     <p><strong>✦ Pengertian Sealed Class</strong></p>
     <ul>
         <li>Sealed class adalah jenis class khusus dalam bahasa pemrograman Dart yang membatasi pewarisan (inheritance) hanya dalam satu file yang sama.</li>
-        <li>Fitur ini diperkenalkan di Dart 3.0 untuk memberikan kontrol lebih ketat terhadap hierarki class.</li>
-        <li>Semua class turunannya (subclass) HARUS ditulis dalam file yang sama dengan sealed class tersebut.</li>
-        <li>Tidak boleh ada subclass yang dibuat di file lain.</li>
-        <li>Pembatasan ini memungkinkan pengembang untuk mengontrol semua class turunan secara lebih jelas.</li>
-        <li>Dengan sealed class, program menjadi lebih aman, terorganisir, dan mudah dipahami.</li>
     </ul>
 
     <p><strong>✦ Contoh Implementasi</strong></p>
@@ -538,17 +533,59 @@ void main() {
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode1.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div>
 
-<!-- SECTION 2: Keuntungan Sealed Class (TAMBAHAN) -->
+<!-- SECTION 2:  -->
 <div class="section">
-    <h2>02. Keuntungan Sealed Class</h2>
+    <h2>01. Keuntungan menggunakan Sealed Class</h2>
     
+    <p><strong>✦ Pengertian Keuntungan Menggunakan Sealed Class</strong></p>
     <ul>
-        <li><strong>🔒 Type Safety</strong> - Kompiler mengetahui semua kemungkinan subclass, sehingga pattern matching lebih aman.</li>
-        <li><strong>📁 Organisasi Kode</strong> - Semua subclass terkait berada dalam satu file, mudah dikelola.</li>
-        <li><strong>⚡ Performance</strong> - Tidak perlu runtime type checking berlebihan.</li>
-        <li><strong>🎯 Exhaustive Checking</strong> - Switch expression bisa memeriksa semua kemungkinan.</li>
-        <li><strong>🛡️ Encapsulation</strong> - Mencegah subclass tidak terduga dari luar package.</li>
+        <li>Sealed class adalah jenis class khusus dalam bahasa pemrograman Dart yang membatasi pewarisan (inheritance) hanya dalam satu file yang sama. Fitur ini diperkenalkan di Dart 3.0 untuk memberikan kontrol yang lebih ketat terhadap hierarki class.</li>
     </ul>
+    <div class="code-box">
+        <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
+// NIM   : 251410009
+// Kelas : SI2A
+
+class Animal {
+  void speak() {
+    print("Hewan bersuara");
+  }
+}
+
+class Dog extends Animal {
+  @override
+  void speak() {
+    print("🐕 Anjing: Woof! Woof!");
+  }
+}
+
+class Cat extends Animal {
+  @override
+  void speak() {
+    print("🐈 Cat: Meow! Meow!");
+  }
+}
+
+void main() {
+  print("=" * 50);
+  print("CONTOH POLIMORFISME (METHOD OVERRIDING)");
+  print("=" * 50);
+
+  Animal animal = Animal();
+  animal.speak();
+
+  Dog dog = Dog();
+  dog.speak();
+
+  Cat cat = Cat();
+  cat.speak();
+
+  print("\n--- Polimorfisme dengan parent reference ---");
+  Animal hewan1 = Dog();
+  Animal hewan2 = Cat();
+  hewan1.speak();
+  hewan2.speak();
+}
 </div>
 
 <!-- FOOTER -->
