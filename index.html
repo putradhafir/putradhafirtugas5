@@ -145,6 +145,8 @@ body{
 
 .code-box pre {
     margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 .code-box code {
@@ -180,6 +182,7 @@ body{
     border-radius: 8px;
     border: 2px solid #38bdf8;
     box-shadow: 0 0 15px rgba(56,189,248,0.5);
+    cursor: pointer;
 }
 
 hr {
@@ -190,19 +193,99 @@ hr {
     height: 2px;
     background-color: #38bdf8;
 }
+
+/* MODAL UNTUK GAMBAR BESAR */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 12px;
+    border: 3px solid #38bdf8;
+    box-shadow: 0 0 30px rgba(56,189,248,0.5);
+}
+
+.close-modal {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    font-size: 40px;
+    color: #38bdf8;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1001;
+}
+
+.close-modal:hover {
+    transform: scale(1.2);
+    color: white;
+}
 </style>
 
 <script>
-// Fungsi untuk toggle tampilan gambar
+// Fungsi untuk toggle tampilan gambar (perbaikan)
 function toggleImage(imgId) {
-    const img = document.getElementById(imgId);
+    var img = document.getElementById(imgId);
     
-    if (img.style.display === "none" || img.style.display === "") {
+    if (img === null) {
+        console.error("Gambar dengan ID '" + imgId + "' tidak ditemukan!");
+        return;
+    }
+    
+    if (img.style.display === "none") {
+        img.style.display = "block";
+    } else if (img.style.display === "") {
         img.style.display = "block";
     } else {
         img.style.display = "none";
     }
 }
+
+// Fungsi untuk membuka modal gambar besar
+function openModal(imgId) {
+    var img = document.getElementById(imgId);
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+    
+    if (img === null) return;
+    
+    modal.style.display = "block";
+    modalImg.src = img.src;
+}
+
+// Fungsi untuk menutup modal
+function closeModal() {
+    var modal = document.getElementById("imageModal");
+    modal.style.display = "none";
+}
+
+// Pastikan semua fungsi berjalan setelah halaman selesai dimuat
+document.addEventListener("DOMContentLoaded", function() {
+    // Cek semua gambar dan beri event klik untuk modal
+    var images = document.querySelectorAll('.vscode-image');
+    for (var i = 0; i < images.length; i++) {
+        images[i].addEventListener('click', function() {
+            openModal(this.id);
+        });
+    }
+});
 </script>
 </head>
 
@@ -286,11 +369,24 @@ void main() {
     </button>
 
     <img id="img1" class="vscode-image" src="vscode1.png" alt="Tampilan VS Code" style="display:none;" 
-         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22 viewBox=%220 0 400 300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%230f172a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%2338bdf8%22 font-family=%22monospace%22%3E⚠️ vscode1.png tidak ditemukan%3C/text%3E%3C/svg%3E';">
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230f172a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2338bdf8%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode1.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%2367e8f9%22 font-size=%2216%22 font-family=%22monospace%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%2367e8f9%22 font-size=%2214%22 font-family=%22monospace%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div>
 
-<!-- SECTION 2 bisa ditambahkan di sini -->
+<!-- MODAL UNTUK GAMBAR BESAR -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <img id="modalImage" src="" alt="Preview Gambar">
+    </div>
+</div>
 
 </div>
+
+<script>
+// Informasi di console untuk membantu debugging
+console.log("Halaman dimuat dengan sukses!");
+console.log("Jika gambar tidak muncul, pastikan file 'vscode1.png' ada di folder yang sama dengan file HTML ini.");
+</script>
+
 </body>
 </html>
