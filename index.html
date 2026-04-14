@@ -535,7 +535,7 @@ void main() {
 
 <!-- SECTION 2:  -->
 <div class="section">
-    <h2>01. Keuntungan menggunakan Sealed Class</h2>
+    <h2>02. Keuntungan menggunakan Sealed Class</h2>
     
     <p><strong>✦ Pengertian Keuntungan Menggunakan Sealed Class</strong></p>
     <ul>
@@ -597,6 +597,55 @@ void main() {
     <img id="img2" class="vscode-image" src="vscode2.png" alt="Tampilan VS Code" style="display:none;" 
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode2.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div>
+<!-- SECTION 3:  -->
+<div class="section">
+    <h2>03. Polimorfisme Class</h2>
+    
+    <p><strong>✦ Pengertian Polimorfisme Class</strong></p>
+    <ul>
+        <li>Polimorfisme adalah kemampuan dalam pemrograman di mana satu nama (metode atau antarmuka) bisa memiliki banyak perilaku yang berbeda.
+   Tujuannya agar kode lebih efisien; Anda tidak perlu membuat banyak nama fungsi yang berbeda untuk tugas yang serupa.</li>
+    </ul>
+    <div class="code-box">
+        <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
+// NIM   : 251410009
+// Kelas : SI2A
+
+// Final class tidak dapat diwarisi (di-extend)
+final class Settings {
+  String theme;
+  int fontSize;
+
+  Settings({required this.theme, required this.fontSize});
+
+  void showSettings() {
+    print("⚙️ Settings - Theme: $theme, Font Size: $fontSize");
+  }
+}
+
+void main() {
+  print("=" * 50);
+  print("CONTOH FINAL CLASS");
+  print("=" * 50);
+
+  Settings settings = Settings(theme: "Dark Mode", fontSize: 16);
+  settings.showSettings();
+
+  // Jika ingin mencoba extends, akan error:
+  // class WrongSettings extends Settings {} // ERROR: Cannot extend final class
+}</code></pre>
+    </div>
+    
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img2')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img3" class="vscode-image" src="vscode3.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode3.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div
+    
 </div>
 
 <!-- FOOTER -->
