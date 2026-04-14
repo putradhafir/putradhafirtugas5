@@ -994,6 +994,73 @@ function runDart(id, url) {
 </script>
     
 </div
+    
+ <!-- SECTION 9:  -->
+<div class="section">
+    <h2> 9.Implementasi Konsep Abstraksi dalam Pemrograman Dart </h2>
+    
+    <p><strong>✦ Pengertian Implementasi Konsep Abstraksi dalam Pemrograman Dart </strong></p>
+    <ul>
+        <li>Pengertian Implementasi Konsep Abstraksi dalam Pemrograman
+
+            Implementasi konsep abstraksi dalam pemrograman Dart merupakan penerapan salah satu prinsip Object-Oriented Programming (OOP) yang bertujuan untuk menyederhanakan program dengan menyembunyikan detail implementasi.
+Dengan abstraksi, program hanya menampilkan fungsi utama sehingga lebih mudah dipahami dan digunakan oleh pengguna.
+Dalam bahasa Dart, abstraksi diterapkan menggunakan abstract class, yaitu class yang tidak dapat dibuat objek secara langsung dan berfungsi sebagai kerangka dasar bagi class turunan. </li>
+    </ul>
+    <div class="code-box">
+        <pre><code>// Nama  : Putra Dhafir Nashrullah
+// NIM   : 251410009
+// Kelas : SI2A
+
+// Class Abstrak
+abstract class Burung {
+  void suara();
+}
+
+// Class Burung Biasa
+class BurungBiasa extends Burung {
+  @override
+  void suara() {
+    print("Burung bersuara... Cuit cuit");
+  }
+}
+
+// Class Bebek
+class Bebek extends Burung {
+  @override
+  void suara() {
+    print("Bebek bersuara... Kwek kwek");
+  }
+}
+
+// Program Utama
+void main() {
+  // Penamaan variabel dibuat lebih jelas
+  Burung burungBiasa = BurungBiasa();
+  Burung bebek = Bebek();
+
+  burungBiasa.suara();
+  bebek.suara();
+}</code></pre>
+<div>
+   <button class="button" 
+onclick="runDart('dart9','https://dartpad.dev/embed-inline.html?id=0450d39cfafe553b9e58284f2acf719a&split=60&run=true')">
+RUN CODE 9
+</button> 
+    
+    <iframe id="dart9" style="display:none; width:100%; height:500px;"></iframe>
+</div>
+
+<script>
+function runDart(id, url) {
+    var frame = document.getElementById(id);
+    frame.style.display = "block";
+    frame.src = url;
+}
+</script>
+    
+</div
+
 </div>
 
 <!-- FOOTER -->
