@@ -241,10 +241,11 @@ function runDart(id, url) {
 <h3>Kode Program VS Code:</h3>
 <div class="code-box">
 <pre><code>
-// Nama  :Yoza Ulpia Rafila
-// NIM   : 251410004
+// Nama  : PUTRA DHAFIR NASHRULLAH
+// NIM   : 251410009
 // Kelas : SI2A
 
+// Sealed class membatasi pewarisan hanya dalam satu file
 sealed class ApiResponse {}
 
 class Success extends ApiResponse {
@@ -257,8 +258,21 @@ class Error extends ApiResponse {
   Error(this.errorMessage);
 }
 
+void handleResponse(ApiResponse response) {
+  if (response is Success) {
+    print("✅ Success: ${response.message}");
+  } else if (response is Error) {
+    print("❌ Error: ${response.errorMessage}");
+  }
+}
+
 void main() {
-  print("Contoh penggunaan Sealed Class");
+  print("=" * 50);
+  print("CONTOH SEALED CLASS");
+  print("=" * 50);
+  
+  handleResponse(Success("Data berhasil diambil"));
+  handleResponse(Error("Terjadi kesalahan pada server"));
 }
 </code></pre>
 </div>
