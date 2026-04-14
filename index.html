@@ -30,9 +30,17 @@ body::before{
     z-index:-1;
 }
 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* HEADER DARK */
 .header{
     background:rgba(2,6,23,0.95);
+    border-radius: 15px;
+    margin-bottom: 20px;
 }
 
 /* JUDUL BIRU */
@@ -52,7 +60,7 @@ body::before{
 
 /* SECTION */
 .section{
-    margin:20px;
+    margin:20px 0;
     padding:20px;
     border:1px solid #38bdf8;
     border-radius:12px;
@@ -65,6 +73,7 @@ body::before{
     transform:translateY(-5px);
     box-shadow:0 0 25px #38bdf8;
 }
+
 /* ===== WARNA GLOBAL (SEMUA BIRU) ===== */
 body{
     color:#38bdf8;
@@ -74,6 +83,12 @@ body{
 .section h2{
     color:#38bdf8;
     text-shadow:0 0 8px #38bdf8;
+}
+
+.section h3 {
+    color: #38bdf8;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
 /* ===== NAMA DI BAWAH JUDUL ===== */
@@ -88,7 +103,17 @@ body{
 /* ===== PENGERTIAN ===== */
 .section p{
     color:#38bdf8;
-   text-shadow:0 0 6px #38bdf8;
+    text-shadow:0 0 6px #38bdf8;
+}
+
+.section ul {
+    margin-left: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section li {
+    margin-bottom: 8px;
 }
 
 /* ===== GARIS PEMBATAS ===== */
@@ -107,7 +132,8 @@ body{
     color:#38bdf8;
     text-shadow:0 0 6px #38bdf8;
 }
-    /* CODE */
+
+/* CODE */
 .code-box{
     background:#0f172a;
     padding:15px;
@@ -117,69 +143,65 @@ body{
     margin-top:15px;
 }
 
-/* CODE COLOR */
-.keyword{color:#60a5fa;}
-.type{color:#38bdf8;}
-.string{color:#facc15;}
-.comment{color:#94a3b8;}
+.code-box pre {
+    margin: 0;
+}
+
+.code-box code {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #67e8f9;
+}
 
 /* BUTTON */
 .button{
-    margin-top:10px;
-    padding:8px 15px;
+    margin-top:15px;
+    padding:8px 20px;
     background:#38bdf8;
     border:none;
     cursor:pointer;
-    color:black;
+    color:#020617;
     border-radius:5px;
     font-weight:bold;
+    transition: 0.3s;
 }
 
-/* IMAGE */
-img{
-    margin-top:10px;
-    max-width:100%;
-    height:auto;
-    display:none;
-    border-radius:8px;
+.button:hover {
+    background: #0ea5e9;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #38bdf8;
+}
+
+/* GAMBAR VS CODE */
+.vscode-image {
+    margin-top: 15px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #38bdf8;
+    box-shadow: 0 0 15px rgba(56,189,248,0.5);
+}
+
+hr {
+    width: 60%;
+    max-width: 300px;
+    margin: 20px auto;
+    border: none;
+    height: 2px;
+    background-color: #38bdf8;
 }
 </style>
+
 <script>
-let activeElement = null;
-
-function showContent(id) {
-    if (activeElement) {
-        activeElement.style.display = "none";
+// Fungsi untuk toggle tampilan gambar
+function toggleImage(imgId) {
+    const img = document.getElementById(imgId);
+    
+    if (img.style.display === "none" || img.style.display === "") {
+        img.style.display = "block";
+    } else {
+        img.style.display = "none";
     }
-
-    const el = document.getElementById(id);
-
-    if (activeElement === el) {
-        activeElement = null;
-        return;
-    }
-
-    el.style.display = "block";
-    activeElement = el;
-}
-
-// TAMBAHKAN DI SINI (di bawah showContent, masih dalam <script>)
-function runDart(id, url) {
-    if (activeElement) {
-        activeElement.style.display = "none";
-    }
-
-    const frame = document.getElementById(id);
-
-    if (activeElement === frame) {
-        activeElement = null;
-        return;
-    }
-
-    frame.src = url;
-    frame.style.display = "block";
-
-    activeElement = frame;
 }
 </script>
 </head>
@@ -195,52 +217,34 @@ function runDart(id, url) {
     <h1 style="font-size: clamp(2.2em, 6vw, 2.8em); margin: 0; line-height: 1.3; font-weight: bold;">Class Modifiers</h1>
 
     <!-- GARIS PEMBATAS -->
-    <hr style="width: 60%; max-width: 300px; margin: 20px auto; border: none; height: 2px; background-color: #38bdf8;">
+    <hr>
 
     <!-- DATA DIRI -->
     <div class="identitas">
-        <p>Yoza Ulpia Rafila</p>
-        <p>251410004</p>
+        <p><strong>PUTRA DHAFIR NASHRULLAH</strong></p>
+        <p>251410009</p>
         <p>SI2A</p>
     </div>
 
 </div>
-<!-- 1 -->
+
+<!-- SECTION 1 -->
 <div class="section">
-<h2>1. Pengenalan Sealed Class </h2>
-<p><b>Pengertian Sealed Class:</b></p>
+    <h2>1. Pengenalan Sealed Class</h2>
+    <p><b>Pengertian Sealed Class:</b></p>
 
-<ul>
-  <li>
-    Sealed class adalah jenis class dalam Dart yang membatasi pewarisan hanya 
-    dalam satu file yang sama.
-  </li>
+    <ul>
+        <li>Sealed class adalah jenis class dalam Dart yang membatasi pewarisan hanya dalam satu file yang sama.</li>
+        <li>Pembatasan ini memungkinkan pengembang untuk mengontrol semua class turunan secara lebih jelas.</li>
+        <li>Dengan sealed class, program menjadi lebih aman, terorganisir, dan mudah dipahami.</li>
+        <li>Pada program, ApiResponse digunakan sebagai sealed class dengan dua turunan, yaitu Success dan Error.</li>
+        <li>Kedua class tersebut merepresentasikan kondisi berhasil dan gagal.</li>
+        <li>Hal ini memudahkan pengelolaan alur program serta pengecekan tipe data.</li>
+    </ul>
 
-  <li>
-    Pembatasan ini memungkinkan pengembang untuk mengontrol semua class turunan 
-    secara lebih jelas.
-  </li>
-
-  <li>
-    Dengan sealed class, program menjadi lebih aman, terorganisir, dan mudah dipahami.
-  </li>
-
-  <li>
-    Pada program, ApiResponse digunakan sebagai sealed class dengan dua turunan, 
-    yaitu Success dan Error.
-  </li>
-
-  <li>
-    Kedua class tersebut merepresentasikan kondisi berhasil dan gagal.
-  </li>
-
-  <li>
-    Hal ini memudahkan pengelolaan alur program serta pengecekan tipe data.
-  </li>
-</ul>
-<h3>Kode Program VS Code:</h3>
-<div class="code-box">
-<pre><code>
+    <h3>Kode Program VS Code:</h3>
+    <div class="code-box">
+        <pre><code>
 // Nama  : PUTRA DHAFIR NASHRULLAH
 // NIM   : 251410009
 // Kelas : SI2A
@@ -274,11 +278,19 @@ void main() {
   handleResponse(Success("Data berhasil diambil"));
   handleResponse(Error("Terjadi kesalahan pada server"));
 }
-</code></pre>
-</div>
-<button class="button" onclick="showContent('img1')">
-Tampilkan VS Code 1
-</button>
+        </code></pre>
+    </div>
+    
+    <button class="button" onclick="toggleImage('img1')">
+        📁 Tampilkan VS Code 1
+    </button>
 
-<img id="img1" src="vscode1.png" style="display:none;">
+    <img id="img1" class="vscode-image" src="vscode1.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22 viewBox=%220 0 400 300%22%3E%3Crect width=%22400%22 height=%22300%22 fill=%22%230f172a%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%2338bdf8%22 font-family=%22monospace%22%3E⚠️ vscode1.png tidak ditemukan%3C/text%3E%3C/svg%3E';">
 </div>
+
+<!-- SECTION 2 bisa ditambahkan di sini -->
+
+</div>
+</body>
+</html>
