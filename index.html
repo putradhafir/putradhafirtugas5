@@ -317,12 +317,12 @@ document.addEventListener("DOMContentLoaded", function() {
     <p><b>Pengertian Sealed Class:</b></p>
 
     <ul>
-        <li>Sealed class adalah jenis class dalam Dart yang membatasi pewarisan hanya dalam satu file yang sama.</li>
-        <li>Pembatasan ini memungkinkan pengembang untuk mengontrol semua class turunan secara lebih jelas.</li>
-        <li>Dengan sealed class, program menjadi lebih aman, terorganisir, dan mudah dipahami.</li>
-        <li>Pada program, ApiResponse digunakan sebagai sealed class dengan dua turunan, yaitu Success dan Error.</li>
-        <li>Kedua class tersebut merepresentasikan kondisi berhasil dan gagal.</li>
-        <li>Hal ini memudahkan pengelolaan alur program serta pengecekan tipe data.</li>
+        <li>Sealed class adalah jenis class khusus dalam bahasa pemrograman Dart yang membatasi pewarisan (inheritance) hanya dalam satu file yang sama.
+        Ini adalah fitur yang diperkenalkan di Dart 3.0 untuk memberikan kontrol lebih ketat terhadap hierarki class.
+        Dengan kata lain, jika Anda membuat sebuah sealed class, maka semua class turunannya (subclass) HARUS ditulis dalam file yang sama 
+        dengan sealed class tersebut.
+        Tidak boleh ada subclass yang dibuat di file lain..</li>
+
     </ul>
 
     <h3>Kode Program VS Code:</h3>
