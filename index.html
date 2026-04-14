@@ -759,6 +759,87 @@ void main() {
     <img id="img5" class="vscode-image" src="vscode5.png" alt="Tampilan VS Code" style="display:none;" 
          onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode5.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div
+       <!-- SECTION 6:  -->
+<div class="section">
+    <h2>6.Pewarisan dan Method Overriding Pada Class Repository (BONUS 1)  </h2>
+    
+    <p><strong>✦ Pengertian Class Repository</strong></p>
+    <ul>
+        <li>Pewarisan (inheritance) adalah konsep dalam OOP yang memungkinkan class turunan mewarisi atribut dan method dari class induk.
+Konsep ini membantu mengurangi penulisan kode yang berulang (duplikasi).
+Class turunan dapat melakukan method overriding, yaitu mendefinisikan ulang method dari class induk sesuai kebutuhan.
+Pada program, class Repository sebagai class induk memiliki method create, read, update, dan delete.
+Class UserRepository sebagai turunan mewarisi method tersebut dan melakukan overriding pada method read() untuk menampilkan data user. </li>
+    </ul>
+    <div class="code-box">
+        <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
+// NIM   : 251410009
+// Kelas : SI2A
+
+// Class Abstrak
+abstract class Bentuk {
+  double hitungLuas();
+}
+
+// Class Persegi
+class Persegi extends Bentuk {
+  double sisi;
+  Persegi(this.sisi);
+
+  @override
+  double hitungLuas() {
+    return sisi * sisi;
+  }
+}
+
+// Class Lingkaran
+class Lingkaran extends Bentuk {
+  double jariJari;
+  Lingkaran(this.jariJari);
+
+  @override
+  double hitungLuas() {
+    return 3.14159 * jariJari * jariJari;
+  }
+}
+
+// Class Segitiga
+class Segitiga extends Bentuk {
+  double alas;
+  double tinggi;
+  Segitiga(this.alas, this.tinggi);
+
+  @override
+  double hitungLuas() {
+    return 0.5 * alas * tinggi;
+  }
+}
+
+void main() {
+  print("=" * 50);
+  print("CONTOH ABSTRAKSI (BENTUK GEOMETRI)");
+  print("=" * 50);
+
+  Persegi persegi = Persegi(5);
+  print("Luas Persegi (sisi=5): ${persegi.hitungLuas()}");
+
+  Lingkaran lingkaran = Lingkaran(7);
+  print("Luas Lingkaran (r=7): ${lingkaran.hitungLuas().toStringAsFixed(2)}");
+
+  Segitiga segitiga = Segitiga(6, 8);
+  print("Luas Segitiga (alas=6, tinggi=8): ${segitiga.hitungLuas()}");
+}</code></pre>
+    </div>
+    
+    <div class="btn-group">
+        <button class="btn btn-primary" onclick="toggleImage('img6')">
+            📁 GAMBAR VS Code
+        </button>
+    </div>
+
+    <img id="img6" class="vscode-image" src="vscode6.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300ff88%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode6.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+</div
 </div>
 
 <!-- FOOTER -->
