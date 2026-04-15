@@ -823,23 +823,16 @@ void main() {
         <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
 // NIM   : 251410009
 // Kelas : SI2A
+abstract class MathUtils {
+  MathUtils._(); // private constructor
 
-final class MathUtils {
-  static int tambah(int a, int b) {
-    return a + b;
-  }
+  static int tambah(int a, int b) => a + b;
 
-  static int kali(int a, int b) {
-    return a * b;
-  }
+  static int kali(int a, int b) => a * b;
 
-  static int kurang(int a, int b) {
-    return a - b;
-  }
+  static int kurang(int a, int b) => a - b;
 
-  static double bagi(int a, int b) {
-    return a / b;
-  }
+  static double bagi(int a, int b) => a / b;
 }
 
 void main() {
@@ -848,7 +841,7 @@ void main() {
   print("=" * 50);
 
   print("Penjumlahan (5 + 3): ${MathUtils.tambah(5, 3)}");
-  print("Perkalian (5 × 3): ${MathUtils.kali(5, 3)}");
+  print("Perkalian (5 x 3): ${MathUtils.kali(5, 3)}");
   print("Pengurangan (10 - 4): ${MathUtils.kurang(10, 4)}");
   print("Pembagian (15 ÷ 3): ${MathUtils.bagi(15, 3)}");
 }</code></pre>
@@ -1179,90 +1172,32 @@ function runDart(id, url) {
 // NIM   : 251410009
 // Kelas : SI2A
 
-// Mixin dengan properti (state)
+// Mixin TANPA state (yang benar)
 mixin CanFly {
-  bool _isFlying = false; // property (private)
-
-  bool get isFlying => _isFlying; // getter
-
   void fly() {
-    if (!_isFlying) {
-      _isFlying = true;
-      print("Started flying!");
-    } else {
-      print("Already flying!");
-    }
+    print("Started flying!");
   }
-
+  
   void land() {
-    if (_isFlying) {
-      _isFlying = false;
-      print("Landed!");
-    } else {
-      print("Already on the ground!");
-    }
+    print("Landed!");
   }
 }
 
 mixin CanSwim {
-  bool _isSwimming = false; // property (private)
-
-  bool get isSwimming => _isSwimming; // getter
-
   void swim() {
-    if (!_isSwimming) {
-      _isSwimming = true;
-      print("Started swimming!");
-    } else {
-      print("Already swimming!");
-    }
+    print("Started swimming!");
   }
-
+  
   void stopSwim() {
-    if (_isSwimming) {
-      _isSwimming = false;
-      print("Stop swimming!");
-    } else {
-      print("Already stopped swimming!");
-    }
+    print("Stop swimming!");
   }
 }
 
-// Class
+// Class menggunakan mixin
 class Bird with CanFly {}
-
 class Duck extends Bird with CanSwim {}
-
 class Fish with CanSwim {}
-
-class Airplane with CanFly {}
-
-// Main
-void main() {
-  print("=== Bird ===");
-  Bird bird = Bird();
-  bird.fly();
-  bird.fly();
-  bird.land();
-  bird.land();
-
-  print("\n=== Duck ===");
-  Duck duck = Duck();
-  duck.fly();
-  duck.swim();
-  duck.swim();
-  duck.stopSwim();
-
-  print("\n=== Fish ===");
-  Fish fish = Fish();
-  fish.swim();
-  fish.stopSwim();
-
-  print("\n=== Airplane ===");
-  Airplane airplane = Airplane();
-  airplane.fly();
-  airplane.land();
-}</code></pre>
+class Airplane with CanFly {}</code></pre>
 <div>
    <button class="button" 
 onclick="runDart('dart10','https://dartpad.dev/embed-inline.html?id=b0b2bcd3982fbc8e35894ef8bc2157b5&split=60&run=true')">
