@@ -1121,18 +1121,18 @@ function runDart(id, url) {
 // NIM   : 251410009
 // Kelas : SI2A
 
-// Mixin dengan property/state
+// MIXIN DENGAN STATE
 mixin Logger {
   String logLevel = "INFO";
-  
+
   void log(String message) {
     print("[$logLevel] $message");
   }
-  
+
   void setDebugMode() {
     logLevel = "DEBUG";
   }
-  
+
   void setErrorMode() {
     logLevel = "ERROR";
   }
@@ -1140,32 +1140,31 @@ mixin Logger {
 
 mixin Counter {
   int _count = 0;
-  
+
   int get count => _count;
-  
+
   void increment() {
     _count++;
     print("Count: $_count");
   }
-  
+
   void reset() {
     _count = 0;
     print("Count direset ke 0");
   }
 }
 
-// Class menggunakan mixin dengan state
 class Application with Logger, Counter {
   void start() {
     log("Aplikasi dimulai");
     increment();
   }
-  
+
   void process() {
     log("Memproses data...");
     increment();
   }
-  
+
   void finish() {
     log("Aplikasi selesai");
     log("Total proses: $count");
@@ -1179,7 +1178,7 @@ void main() {
   app.process();
   app.finish();
   app.reset();
-}</code></pre>
+}/code></pre>
 <div>
    <button class="button" 
 onclick="runDart('dart10','https://dartpad.dev/embed-inline.html?id=b0b2bcd3982fbc8e35894ef8bc2157b5&split=60&run=true')">
