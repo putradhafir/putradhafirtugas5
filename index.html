@@ -715,7 +715,7 @@ void main() {
 // NIM   : 251410009
 // Kelas : SI2A
 
-// Final class tidak dapat diwarisi (di-extend)
+// FINAL CLASS - Tidak bisa di-extend
 final class Settings {
   String theme;
   int fontSize;
@@ -728,9 +728,9 @@ final class Settings {
 }
 
 void main() {
-  print("=" * 50);
+  print("==================================================");
   print("CONTOH FINAL CLASS");
-  print("=" * 50);
+  print("==================================================");
 
   Settings settings = Settings(theme: "Dark Mode", fontSize: 16);
   settings.showSettings();
@@ -746,8 +746,8 @@ void main() {
         </button>
     </div>
 
-    <img id="img3" class="vscode-image" src="vscode3.png" alt="Tampilan VS Code" style="display:none;" 
-         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode3.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+    <img id="img3" class="vscode-image" src="vscode3baru.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode3baru.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div>
     <!-- SECTION 4:  -->
 <div class="section">
@@ -763,43 +763,7 @@ Sederhananya, meskipun nama dan parameternya sama, isi instruksi di dalamnya diu
 // NIM   : 251410009
 // Kelas : SI2A
 
-class Repository {
-  void create() {
-    print("📝 Data berhasil ditambahkan");
-  }
-
-  void read() {
-    print("📖 Menampilkan data");
-  }
-
-  void update() {
-    print("✏️ Data berhasil diupdate");
-  }
-
-  void delete() {
-    print("🗑️ Data berhasil dihapus");
-  }
-}
-
-class UserRepository extends Repository {
-  @override
-  void read() {
-    print("👥 //Menampilkan data user (override)");
-  }
-}
-
-void main() {
-  print("=" * 50);
-  print("CONTOH INHERITANCE & METHOD OVERRIDING");
-  print("=" * 50);
-
-  UserRepository repo = UserRepository();
-
-  repo.create();
-  repo.read(); // Method override dari UserRepository
-  repo.update();
-  repo.delete();
-}</code></pre>
+</code></pre>
     </div>
     
     <div class="btn-group">
@@ -808,8 +772,8 @@ void main() {
         </button>
     </div>
 
-    <img id="img4" class="vscode-image" src="vscode4.png" alt="Tampilan VS Code" style="display:none;" 
-         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode4.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+    <img id="img4" class="vscode-image" src="vscode4baru.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode4baru.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div 
      <!-- SECTION 5:  -->
 <div class="section">
