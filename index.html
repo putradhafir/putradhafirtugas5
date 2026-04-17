@@ -762,7 +762,43 @@ Sederhananya, meskipun nama dan parameternya sama, isi instruksi di dalamnya diu
         <pre><code>//Nama  : PUTRA DHAFIR NASHRULLAH
 // NIM   : 251410009
 // Kelas : SI2A
+class Repository {
+  void create() {
+    print("📝 Data berhasil ditambahkan");
+  }
 
+  void read() {
+    print("📖 Menampilkan data");
+  }
+
+  void update() {
+    print("✏️ Data berhasil diupdate");
+  }
+
+  void delete() {
+    print("🗑️ Data berhasil dihapus");
+  }
+}
+
+class UserRepository extends Repository {
+  @override
+  void read() {
+    print("👥 Menampilkan data user (override)"); // ✅ Hapus // yang tidak perlu
+  }
+}
+
+void main() {
+  print("==================================================");
+  print("CONTOH INHERITANCE & METHOD OVERRIDING");
+  print("==================================================");
+
+  UserRepository repo = UserRepository();
+
+  repo.create();
+  repo.read();
+  repo.update();
+  repo.delete();
+}
 </code></pre>
     </div>
     
