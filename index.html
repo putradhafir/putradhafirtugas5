@@ -787,27 +787,25 @@ Sederhananya, meskipun nama dan parameternya sama, isi instruksi di dalamnya diu
         <pre><code>// Nama  : PUTRA DHAFIR NASHRULLAH
 // NIM   : 251410009
 // Kelas : SI2A
-abstract class MathUtils {
-  MathUtils._(); // private constructor
-
-  static int tambah(int a, int b) => a + b;
-
-  static int kali(int a, int b) => a * b;
-
-  static int kurang(int a, int b) => a - b;
-
-  static double bagi(int a, int b) => a / b;
+// FINAL CLASS SETTINGS 
+final class AppConfig {
+  final String appName;
+  final String version;
+  
+  const AppConfig({
+    required this.appName,
+    required this.version,
+  });
+  
+  void showConfig() {
+    print("📱 App: $appName");
+    print("🔢 Version: $version");
+  }
 }
 
 void main() {
-  print("=" * 50);
-  print("CONTOH UTILITY CLASS DENGAN STATIC METHOD");
-  print("=" * 50);
-
-  print("Penjumlahan (5 + 3): ${MathUtils.tambah(5, 3)}");
-  print("Perkalian (5 x 3): ${MathUtils.kali(5, 3)}");
-  print("Pengurangan (10 - 4): ${MathUtils.kurang(10, 4)}");
-  print("Pembagian (15 ÷ 3): ${MathUtils.bagi(15, 3)}");
+  final config = AppConfig(appName: "MyApp", version: "1.0.0");
+  config.showConfig();
 }</code></pre>
     </div>
     
@@ -837,12 +835,11 @@ Class UserRepository sebagai turunan mewarisi method tersebut dan melakukan over
 // NIM   : 251410009
 // Kelas : SI2A
 
-// Class Abstrak
+// ABSTRACT CLASS BENTUK GEOMETRI (cukup ditulis 1 kali)
 abstract class Bentuk {
   double hitungLuas();
 }
 
-// Class Persegi
 class Persegi extends Bentuk {
   double sisi;
   Persegi(this.sisi);
@@ -853,7 +850,6 @@ class Persegi extends Bentuk {
   }
 }
 
-// Class Lingkaran
 class Lingkaran extends Bentuk {
   double jariJari;
   Lingkaran(this.jariJari);
@@ -864,7 +860,6 @@ class Lingkaran extends Bentuk {
   }
 }
 
-// Class Segitiga
 class Segitiga extends Bentuk {
   double alas;
   double tinggi;
@@ -877,18 +872,14 @@ class Segitiga extends Bentuk {
 }
 
 void main() {
-  print("=" * 50);
-  print("CONTOH ABSTRAKSI (BENTUK GEOMETRI)");
-  print("=" * 50);
-
   Persegi persegi = Persegi(5);
-  print("Luas Persegi (sisi=5): ${persegi.hitungLuas()}");
+  print("Luas Persegi: ${persegi.hitungLuas()}");
 
   Lingkaran lingkaran = Lingkaran(7);
-  print("Luas Lingkaran (r=7): ${lingkaran.hitungLuas().toStringAsFixed(2)}");
+  print("Luas Lingkaran: ${lingkaran.hitungLuas().toStringAsFixed(2)}");
 
   Segitiga segitiga = Segitiga(6, 8);
-  print("Luas Segitiga (alas=6, tinggi=8): ${segitiga.hitungLuas()}");
+  print("Luas Segitiga: ${segitiga.hitungLuas()}");
 }</code></pre>
     </div>
     
@@ -898,8 +889,8 @@ void main() {
         </button>
     </div>
 
-    <img id="img6" class="vscode-image" src="vscode6.png" alt="Tampilan VS Code" style="display:none;" 
-         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode6.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+    <img id="img6" class="vscode-image" src="vscode6baru.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode6baru.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div
      <!-- SECTION 7:  -->
 <div class="section">
@@ -918,37 +909,31 @@ Metode ini dideklarasikan dengan kata kunci static, artinya fungsi tersebut mele
 // NIM   : 251410009
 // Kelas : SI2A
 
-// Class Abstrak
+// ABSTRACT CLASS BURUNG (cukup ditulis 1 kali)
 abstract class Burung {
   void suara();
 }
 
-// Class Burung Biasa
 class BurungBiasa extends Burung {
   @override
   void suara() {
-    print("🐦 Burung bersuara... Cuit cuit cuit");
+    print("🐦 Burung biasa: Cuit cuit cuit");
   }
 }
 
-// Class Bebek
 class Bebek extends Burung {
   @override
   void suara() {
-    print("🦆 Bebek bersuara... Kwek kwek kwek");
+    print("🦆 Bebek: Kwek kwek kwek");
   }
 }
 
 void main() {
-  print("=" * 50);
-  print("CONTOH ABSTRAKSI (BURUNG & BEBEK)");
-  print("=" * 50);
+  Burung burung1 = BurungBiasa();
+  Burung burung2 = Bebek();
 
-  Burung burungBiasa = BurungBiasa();
-  Burung bebek = Bebek();
-
-  burungBiasa.suara();
-  bebek.suara();
+  burung1.suara();
+  burung2.suara();
 }</code></pre>
     </div>
     
@@ -958,8 +943,8 @@ void main() {
         </button>
     </div>
 
-    <img id="img7" class="vscode-image" src="vscode7.png" alt="Tampilan VS Code" style="display:none;" 
-         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode7.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
+    <img id="img7" class="vscode-image" src="vscode7baru.png" alt="Tampilan VS Code" style="display:none;" 
+         onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22400%22 viewBox=%220 0 600 400%22%3E%3Crect width=%22600%22 height=%22400%22 fill=%22%230a1f0a%22/%3E%3Ctext x=%2250%25%22 y=%2240%25%22 text-anchor=%22middle%22 fill=%22%2300f3ff%22 font-size=%2220%22 font-family=%22monospace%22%3E⚠️ vscode7baru.png TIDAK DITEMUKAN!%3C/text%3E%3Ctext x=%2250%25%22 y=%2255%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2216%22%3EPastikan file gambar ada di folder yang sama%3C/text%3E%3Ctext x=%2250%25%22 y=%2270%25%22 text-anchor=%22middle%22 fill=%22%238affc0%22 font-size=%2214%22%3Edengan file HTML ini%3C/text%3E%3C/svg%3E';">
 </div
      <!-- SECTION 8:  -->
 <div class="section">
